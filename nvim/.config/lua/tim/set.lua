@@ -1,5 +1,5 @@
 -- Disable the GUI cursor
-vim.opt.guicursor = ""
+--vim.opt.guicursor = ""
 
 -- Enable line numbers
 vim.opt.nu = true
@@ -59,5 +59,5 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 -- Highlight column at character position 80
-vim.opt.colorcolumn = "80"
+--vim.opt.colorcolumn = "80"
 
