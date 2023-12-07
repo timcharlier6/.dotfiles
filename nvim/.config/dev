@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+neovim_config_dir=~/.config/nvim
+
+# Check if ~/.config/nvim exists before removing
+if [ -e "$neovim_config_dir" ]; then
+    echo "Backing up existing Neovim configuration..."
+fi
+
+# Create symbolic link
+ln -s "$(pwd)" "$neovim_config_dir"
+
+echo "Neovim configuration linked successfully!"
+
