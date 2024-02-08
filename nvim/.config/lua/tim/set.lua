@@ -61,3 +61,6 @@ vim.opt.updatetime = 50
 -- Highlight column at character position 80
 --vim.opt.colorcolumn = "80"
 
+-- Slow down blinking of cursor (working?)
+vim.opt.guicursor = "i:blinkwait700-blinkon1600-blinkoff1000"
+
