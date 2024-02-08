@@ -10,16 +10,16 @@ return require('packer').startup(function(use)
   -- Telescope for fuzzy finding
   use {
     'nvim-telescope/telescope.nvim',
-    tag = '0.1.0',
+    tag = '0.1.5',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
 
   -- Rose Pine color scheme
   use({
-    'rose-pine/neovim',
-    as = 'rose-pine',
+    "craftzdog/solarized-osaka.nvim",
+    as = 'solarized-osaka',
     config = function()
-      vim.cmd('colorscheme rose-pine')
+      vim.cmd[[colorscheme solarized-osaka]]
     end
   })
 
@@ -88,5 +88,15 @@ return require('packer').startup(function(use)
 
   -- Cloak for hiding unimportant text in code
   use("laytan/cloak.nvim")
+
+  -- Turbio bracey to run html live browser
+  use{'turbio/bracey.vim', run = 'npm install --prefix server'}
+
+  --Python client
+  use('neovim/python-client')
+
+  --Double bracket automatic
+  use 'm4xshen/autoclose.nvim'
+
 end)
 

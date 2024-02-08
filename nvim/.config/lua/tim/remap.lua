@@ -4,6 +4,9 @@ vim.g.mapleader = " "
 -- Define a normal mode mapping for <leader>pv to execute the StartVimWithMe function
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
+-- Define a normal mode mapping for <leader>; to insert a ; at the end
+vim.keymap.set("n", "<leader>;", "A;<Esc>")
+
 -- Visual mode mappings to move selected lines down (J) or up (K)
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
