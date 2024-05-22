@@ -81,7 +81,15 @@ return require('packer').startup(function(use)
   use("folke/zen-mode.nvim")
 
   -- Copilot.vim for GitHub Copilot integration
-  use("github/copilot.vim")
+    use {
+    'github/copilot.vim',
+    config = function()
+      vim.g.copilot_no_tab_map = true
+      vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+    end
+  }
+
+
 
   -- Cellular automaton for fun
   use("eandrju/cellular-automaton.nvim")

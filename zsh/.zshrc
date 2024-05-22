@@ -102,3 +102,20 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias musescore='~/Téléchargements/MuseScore-4.2.1.240230938-x86_64.AppImage'
+alias firefox='~/firefox/firefox-bin'
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Start tmux session
+tmux new-session -A -s Session_0
+
+# Set keyboard layout to Dvorak
+setxkbmap dvorak
+
+export EDITOR=nvim
+
+~/Documents/Documents/Nietzsche/randomizer.sh en
+
+

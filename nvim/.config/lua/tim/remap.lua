@@ -7,6 +7,9 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 -- Define a normal mode mapping for <leader>; to insert a ; at the end
 vim.keymap.set("n", "<leader>;", "A;<Esc>")
 
+-- Define a normal mode mapping for <leader>w to toggle wrap mode
+vim.keymap.set("n", "<leader>w", ":set wrap!<CR>")
+
 -- Visual mode mappings to move selected lines down (J) or up (K)
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -70,4 +73,23 @@ vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain")
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
+
+-- Function to toggle GitHub Copilot
+function ToggleCopilot()
+  if vim.g.copilot_enabled then
+    vim.cmd('Copilot disable')
+    vim.g.copilot_enabled = false
+    print("Copilot disabled")
+  else
+    vim.cmd('Copilot enable')
+    vim.g.copilot_enabled = true
+    print("Copilot enabled")
+  end
+end
+
+-- Set initial state
+vim.g.copilot_enabled = true
+
+-- Key mapping to toggle Copilot
+vim.api.nvim_set_keymap('n', '<leader>cp', ':lua ToggleCopilot()<CR>', { noremap = true, silent = true })
 

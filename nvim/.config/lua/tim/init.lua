@@ -46,3 +46,12 @@ vim.g.netrw_winsize = 25
 -- Configure python3
 vim.g.python3_host_prog = '/usr/bin/python3'
 
+-- init.lua
+
+-- Define an autocmd to set omnifunc for JSX files
+vim.api.nvim_exec([[
+  autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+  autocmd FileType javascript.jsx set omnifunc=javascriptcomplete#CompleteJS
+  autocmd FileType typescript.tsx set omnifunc=typescriptcomplete#CompleteTS
+]], false)
+
