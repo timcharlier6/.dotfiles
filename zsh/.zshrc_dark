@@ -1,0 +1,4 @@
+# Dark mode configuration
+export ZSH_THEME="agnoster"
+# Add other dark mode specific settings here
+

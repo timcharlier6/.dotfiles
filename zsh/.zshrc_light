@@ -1,0 +1,4 @@
+# Light mode configuration
+export ZSH_THEME="robbyrussell"
+# Add other light mode specific settings here
+
