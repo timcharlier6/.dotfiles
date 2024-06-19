@@ -46,25 +46,6 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 -- Define a normal mode mapping for <leader>x to make the current file executable
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
--- Function to toggle GitHub Copilot
-function ToggleCopilot()
-  if vim.g.copilot_enabled then
-    vim.cmd("Copilot disable")
-    vim.g.copilot_enabled = false
-    print("Copilot disabled")
-  else
-    vim.cmd("Copilot enable")
-    vim.g.copilot_enabled = true
-    print("Copilot enabled")
-  end
-end
-
--- Set initial state
-vim.g.copilot_enabled = true
-
--- Key mapping to toggle Copilot
-vim.api.nvim_set_keymap("n", "<leader>cp", ":lua ToggleCopilot()<CR>", { noremap = true, silent = true })
-
 -- Navigate buffers with Ctrl-n and Ctrl-p
 vim.api.nvim_set_keymap("n", "<C-n>", ":bnext<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-p>", ":bprevious<CR>", { noremap = true, silent = true })
